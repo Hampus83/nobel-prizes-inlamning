@@ -1,41 +1,55 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+/* font-family: 'Alatsi', sans-serif; */
+/* font-family: 'Source Serif Pro', serif; */
+
+* {
+  box-sizing: border-box;
+  font-family: 'Source Serif Pro', serif;
+  letter-spacing: 0.15em;
+  margin: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App {
+  position: relative;
+  color: #d7d7d7;
+  /* max-width: 100vw; */
+  /* height: 100vh; */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* .cube-wrapper {
+  max-width: 100vw;
+  height: 100vh;
+} */
+
+.more-wrapper {
+  max-width: 100vw;
+  height: 100vh;
+  /* margin-top: 100vh; */
 }
 
-.card {
-  padding: 2em;
+.overflow-hidden {
+  overflow: hidden;
 }
 
-.read-the-docs {
-  color: #888;
+h1 {
+  font-family: 'Alatsi', sans-serif;
 }
+
+button {
+  padding: 1em 2em;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+
+
+

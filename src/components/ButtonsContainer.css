@@ -1,0 +1,39 @@
+.buttons-wrapper {
+    position: absolute;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    left: 0%;
+    top: 31%;
+    width: 40%;
+    /* border: 1px red solid; */
+}
+
+.buttons-wrapper button {
+    position: absolute;
+    font-size: .9em;
+    box-shadow: 6px 6px 2px black;
+    transition: all 50ms ease-in-out;
+}
+
+.buttons-wrapper button:nth-child(1) {
+    top: 0;
+    left: -100%;
+}
+.buttons-wrapper button:nth-child(2) {
+    top: 5em;
+    left: -100%;
+}
+.buttons-wrapper button:nth-child(3) {
+    top: 10em;
+    left: -100%;
+}
+.buttons-wrapper button:nth-child(4) {
+    top: 15em;
+    left: -100%;
+}
+
+.buttons-wrapper button:active {
+    scale: 0.9;
+    box-shadow: 2px 2px 0;
+}

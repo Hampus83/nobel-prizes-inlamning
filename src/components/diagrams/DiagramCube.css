@@ -1,0 +1,58 @@
+/* .diagram-title {
+    align-self: flex-start;
+    margin-top: 2rem;
+    font-size: 60px;
+} */
+
+.diagrams-wrapper {
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    right: 10%;
+    right: -100%;
+    top: -100%;
+    transition: scale .2s ease-in-out;  
+}
+
+.diagrams-wrapper:hover {
+    scale: 1.1;
+}
+
+.diagram1 {
+    background-color: cadetblue;
+    transform: rotateY(180deg) translateZ(50vw);
+}
+
+.diagram2 {
+    background-color: burlywood;
+    transform: rotateY(90deg) translateX(25vw);
+    left: calc(100% - 25vw);
+}
+
+.diagram3 {
+    background-color:brown;
+    transform: rotateY(-90deg) translateX(-25vw);
+    right: calc(100% - 25vw);
+}
+
+.diagram4 {
+    background-color: blueviolet;
+}
+  
+.diagram {
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+    display: grid;
+    place-items: center;
+    transform-style: preserve-3d;
+}
+
+.diagram h1 {
+    transform: translateZ(2em);
+    font-size: 40px;
+}
