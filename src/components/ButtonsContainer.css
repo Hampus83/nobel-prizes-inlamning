@@ -5,15 +5,26 @@
     justify-content: center;
     left: 0%;
     top: 31%;
-    width: 40%;
+    width: 30%;
     /* border: 1px red solid; */
 }
 
 .buttons-wrapper button {
     position: absolute;
     font-size: .9em;
+    width: 12em;
     box-shadow: 6px 6px 2px black;
     transition: all 50ms ease-in-out;
+    /* border-radius: 5px; */
+    background-color: #222222;
+    color: #d7d7d7;
+    border: 2px solid #d7d7d7;
+}
+
+.buttons-wrapper button:hover {
+    scale: 1.05;
+    color: rgb(255, 222, 35);
+    border: 2px solid rgb(255, 222, 35);
 }
 
 .buttons-wrapper button:nth-child(1) {
@@ -35,5 +46,5 @@
 
 .buttons-wrapper button:active {
     scale: 0.9;
-    box-shadow: 2px 2px 0;
+    box-shadow: 2px 2px 0 black;
 }

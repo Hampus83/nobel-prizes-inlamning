@@ -9,15 +9,16 @@ interface Props{
 
 const ButtonsContainer = ({setSelectedDiagram, overlay}: Props) => {
 
-    const diagrams = ['diagram1','diagram2', 'diagram3', 'diagram4'];
+    const diagrams = ['Per Country','Top Ten', 'Per Category', 'Gender'];
 
-    if (!overlay) {
-        useEffect(() => {
+    useEffect(() => {
+        if (!overlay) {
             const showBtn1 = anime({
-                targets: 'button:nth-child(1)',
+                targets: '.buttons-wrapper button',
                 left: '50%',
                 duration: 1000,
                 easing: 'easeOutBack',
+                delay: anime.stagger(200),
                 keyframes: [
                     {scaleX: 0.5},
                     {scaleX: 0.6},
@@ -27,62 +28,13 @@ const ButtonsContainer = ({setSelectedDiagram, overlay}: Props) => {
                     {scaleX: 1}
                 ],
             });
+        }
+    }, [overlay]);
     
-            const showBtn2 = anime({
-                targets: 'button:nth-child(2)',
-                left: '50%',
-                duration: 1000,
-                delay: 300,
-                easing: 'easeOutBack',
-                keyframes: [
-                    {scaleX: 0.5},
-                    {scaleX: 0.6},
-                    {scaleX: 0.7},
-                    {scaleX: 0.8},
-                    {scaleX: 0.9},
-                    {scaleX: 1}
-                ],
-            });
-    
-            const showBtn3 = anime({
-                targets: 'button:nth-child(3)',
-                left: '50%',
-                duration: 1000,
-                delay: 600,
-                easing: 'easeOutBack',
-                keyframes: [
-                    {scaleX: 0.5},
-                    {scaleX: 0.6},
-                    {scaleX: 0.7},
-                    {scaleX: 0.8},
-                    {scaleX: 0.9},
-                    {scaleX: 1}
-                ],
-            });
-    
-            const showBtn4 = anime({
-                targets: 'button:nth-child(4)',
-                left: '50%',
-                duration: 1000,
-                delay: 900,
-                easing: 'easeOutBack',
-                keyframes: [
-                    {scaleX: 0.5},
-                    {scaleX: 0.6},
-                    {scaleX: 0.7},
-                    {scaleX: 0.8},
-                    {scaleX: 0.9},
-                    {scaleX: 1}
-                ],
-            });
-        }, []);
-        
-    }
-
     return (
         <section className="buttons-wrapper">
             {diagrams.map((diagram, index) => (
-                <button value={diagram} key={index} onClick={ () => setSelectedDiagram(diagram) } >{diagram}</button> 
+                <button className='cube-btn' value={diagram} key={index} onClick={ () => setSelectedDiagram(diagram) } >{diagram}</button> 
             ))}
         </section>
     );

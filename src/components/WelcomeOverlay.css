@@ -12,12 +12,14 @@
 
 .overlay-wrapper h1 {
     font-size: 60px;
+    color: rgb(255, 222, 35);
 }
 
 .overlay-wrapper p {
     width: 50%;
-    text-align: center;
     line-height: 2em;
+    width: 70%;
+    text-align: center;
 }
 
 .overlay-btn {
@@ -45,22 +47,22 @@
     position: absolute;
     top: 0;
     left: 0;
-    -webkit-transform: scale(0);
+    transform: scale(0);
     transition: 0.5s;
 }
 
 .hover::before {
     border-bottom: 4px solid rgb(255, 222, 35);
     border-left: 4px solid rgb(255, 222, 35);
-    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
 }
 
 .hover::after {
     border-top: 4px solid rgb(255, 222, 35);
     border-right: 4px solid rgb(255, 222, 35);
-    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
 }
 
 .overlay-btn:hover::after, .overlay-btn:hover::before {
-    -webkit-transform: scale(1);
+    transform: scale(1);
 }

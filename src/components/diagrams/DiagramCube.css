@@ -15,32 +15,33 @@
     right: 10%;
     right: -100%;
     top: -100%;
-    transition: scale .2s ease-in-out;  
+    transition: scale .2s ease-in-out; 
+    z-index: 2;
 }
 
 .diagrams-wrapper:hover {
-    scale: 1.1;
+    scale: 110%;
 }
 
 .diagram1 {
-    background-color: cadetblue;
-    transform: rotateY(180deg) translateZ(50vw);
+    background-color: #222222;
+    transform: rotateY(180deg) translateZ(50vw); 
 }
 
 .diagram2 {
-    background-color: burlywood;
+    background-color: #222222;
     transform: rotateY(90deg) translateX(25vw);
     left: calc(100% - 25vw);
 }
 
 .diagram3 {
-    background-color:brown;
+    background-color: #222222;
     transform: rotateY(-90deg) translateX(-25vw);
     right: calc(100% - 25vw);
 }
 
 .diagram4 {
-    background-color: blueviolet;
+    background-color: #222222;
 }
   
 .diagram {
@@ -50,9 +51,17 @@
     display: grid;
     place-items: center;
     transform-style: preserve-3d;
+    border: .3em solid #d7d7d7; 
 }
 
-.diagram h1 {
-    transform: translateZ(2em);
-    font-size: 40px;
+.diagram:hover {
+    border: .3em solid rgb(255, 222, 35);
+}
+
+.diagram-wrapper {
+    transform: translateZ(4em);
+    display: grid;
+    place-items: center;
+    width: 90%;
+    height: 90%;
 }

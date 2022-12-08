@@ -1,4 +1,5 @@
 .more-diagrams-wrapper {
+    /* position: relative; */
     width: 100%;
     height: 100vh;
     display: flex;
@@ -6,4 +7,107 @@
     justify-content: center;
     align-items: center;
     margin-top: 100vh;
+}
+
+.selection {
+    margin-top: 2em;
+    /* margin-bottom: 10em; */
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.selection .radio-wrapper {
+    display: flex;
+    gap: 5em;
+    margin-bottom: 2em;
+}
+
+.selection .radio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.selection .radio-wrapper input {
+    margin-top: 0.5em;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.selection .btns-wrapper {
+    display: flex;
+    gap: 5em;
+}
+
+.selection .show-chart {
+    font-size: .9em;
+    width: 12em;
+    box-shadow: 6px 6px 2px black;
+    transition: all 50ms ease-in-out;
+    background-color: #222222;
+    color: #d7d7d7;
+    border: 2px solid #d7d7d7;
+}
+
+.selection .show-chart:hover {
+    scale: 1.05;
+    color: rgb(255, 222, 35);
+    border: 2px solid rgb(255, 222, 35);
+}
+
+.selection .show-chart:active {
+    scale: 0.9;
+    box-shadow: 2px 2px 0 black;
+}
+
+.margin-wrapper {
+    margin-top: 5em;
+    position: relative;
+    width: 95vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.chart-wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+    height: 60vh;
+    border: 0.3em solid #d7d7d7;
+    background-color: #222222;
+    top: -2em;
+    overflow: hidden;
+}
+
+.fade {
+    opacity: 0;
+}
+
+.slide {
+    left: -100%;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+select {
+    text-align: center;
+    font-size: .9em;
+    width: 12em;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: #222222;
+    color: #d7d7d7;
+    outline: none;
+}
+
+.chart-info {
+    margin-top: 40%;
+    margin-bottom: 1em;
 }

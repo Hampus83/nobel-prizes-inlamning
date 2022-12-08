@@ -1,19 +1,24 @@
 import './DiagramCube.css';
 import anime from 'animejs';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Pie, Bar, Line, Scatter } from 'react-chartjs-2';
+import { genderDiagramData, noOfWinnersFromEachCountryDiagramData } from '../../data/laureatesData';
+import { noOfPrizesPerCategoryDiagramData, topTenLaureatesDiagram  } from '../../data/awardData';
+import { pieOptions, topTenOptions, countriesOptions } from '../diagrams/options';
 
 interface Props {
     selectedDiagram: string | null;
     overlay: boolean;
+    setTitle: (title: string) => void;
+    setInfoText: (infoText: string) => void;
 }
 
-const DiagramCube = ({selectedDiagram, overlay}: Props) => {
-
-    const rotateYZeroDeg = '0deg';
-    const rotateYTenDeg = '10deg';
+const DiagramCube = ({selectedDiagram, overlay, setTitle, setInfoText}: Props) => {
 
     useEffect(() => {
-        if (selectedDiagram === 'diagram2') {
+        if (selectedDiagram === 'Top Ten') {
+            setTitle('Top ten Nobel Prize winners');
+            setInfoText('This data shows the 10 people or organizations who have won the Nobel Prize most times')
             const showDiagram2 = anime({
                 targets: '.diagrams-wrapper',
                 duration: 3000,
@@ -21,7 +26,9 @@ const DiagramCube = ({selectedDiagram, overlay}: Props) => {
                 left: '15%',
                 easing: 'easeOutElastic'
             });  
-        } else if (selectedDiagram === 'diagram3') {
+        } else if (selectedDiagram === 'Per Category') {
+            setTitle('Nobel Prizes per category');
+            setInfoText('Here you can see how many Nobel Prizes has been won in each category')
             const showDiagram3 = anime({
                 targets: '.diagrams-wrapper',
                 duration: 3000,
@@ -29,7 +36,9 @@ const DiagramCube = ({selectedDiagram, overlay}: Props) => {
                 left: '65%',
                 easing: 'easeOutElastic'
             });
-        } else if (selectedDiagram === 'diagram4') {
+        } else if (selectedDiagram === 'Gender') {
+            setTitle('Gender Distribution');
+            setInfoText('Here you can see the distribution between male, female and organizations who have won the Nobel Prize.')
             const showDiagram4 = anime({
                 targets: '.diagrams-wrapper',
                 duration: 3000,
@@ -37,7 +46,9 @@ const DiagramCube = ({selectedDiagram, overlay}: Props) => {
                 left: '40%',
                 easing: 'easeOutElastic'
             });
-        } else if (selectedDiagram === 'diagram1') {
+        } else if (selectedDiagram === 'Per Country') {
+            setTitle('Nobel Prizes per country');
+            setInfoText('This chart shows all countries who have won 2 or more Nobel Prizes.')
             const showDiagram1 = anime({
                 targets: '.diagrams-wrapper',
                 duration: 3000,
@@ -69,22 +80,35 @@ const DiagramCube = ({selectedDiagram, overlay}: Props) => {
             ],
         })
     }
-    
+
     return (
         <>
             <section className="diagrams-wrapper">
+
                 <section className='diagram diagram1'>
-                    <h1>Diagram 1</h1>
+                    <div className="diagram-wrapper">
+                        <Line options={countriesOptions} data={noOfWinnersFromEachCountryDiagramData} />
+                    </div>
                 </section>
+
                 <section className='diagram diagram2'>
-                    <h1>Diagram 2</h1>
+                    <div className="diagram-wrapper">
+                        <Bar options={topTenOptions} data={topTenLaureatesDiagram} />
+                    </div>
                 </section>
+
                 <section className='diagram diagram3'>
-                    <h1>Diagram 3</h1>
+                    <div className="diagram-wrapper">
+                        <Pie options={pieOptions} data={noOfPrizesPerCategoryDiagramData} />
+                    </div>
                 </section>
+                
                 <section className='diagram diagram4'>
-                    <h1>Diagram 4</h1>
+                    <div className="diagram-wrapper">
+                        <Pie options={pieOptions} data={genderDiagramData} />
+                    </div>
                 </section>
+
             </section>
         </>
     );

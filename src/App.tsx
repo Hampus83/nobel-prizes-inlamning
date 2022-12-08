@@ -5,12 +5,13 @@ import ButtonsContainer from './components/ButtonsContainer';
 import { useState } from 'react';
 import WelcomeOverlay from './components/WelcomeOverlay';
 import MoreDiagrams from './components/diagrams/MoreDiagrams';
-import DownScroller from './components/scroller/DownScroller';
 
 function App() {
 
   const [selectedDiagram, setSelectedDiagram] = useState<string | null>('');
   const [overlay, setOverlay] = useState<boolean>(true);
+  const [title, setTitle] = useState<string>('Gender Distribution');
+  const [infoText, setInfoText] = useState<string>('Here you can see the distribution between male, female and organizations who have won the Nobel Prize.');
 
   let maybeOverflow = 'App';
 
@@ -19,13 +20,16 @@ function App() {
   } else {
     maybeOverflow = 'App';
   }
+
+  // TODOS!!! FIXA LABELS PÅ TOP-10 + FIXA LOREM IPSUM
   
   return (
     <div className={maybeOverflow}>
       {overlay && <WelcomeOverlay setOverlay={setOverlay} />}
+      {!overlay && <h1 className='diagram-title'>{ title }</h1>}
       <ButtonsContainer setSelectedDiagram={setSelectedDiagram} overlay={overlay} />
-      <DiagramCube selectedDiagram={selectedDiagram} overlay={overlay} />
-      {!overlay && <DownScroller/>}
+      <DiagramCube selectedDiagram={selectedDiagram} overlay={overlay} setTitle={setTitle} setInfoText={setInfoText} />
+      {!overlay && <p className='diagram-info'>{ infoText }</p>}
       {!overlay && 
         <section className="more-wrapper">
           <MoreDiagrams />
