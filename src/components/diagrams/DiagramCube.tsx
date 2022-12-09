@@ -1,7 +1,7 @@
 import './DiagramCube.css';
 import anime from 'animejs';
-import { useEffect, useState } from 'react';
-import { Pie, Bar, Line, Scatter } from 'react-chartjs-2';
+import { useEffect } from 'react';
+import { Pie, Bar, Line } from 'react-chartjs-2';
 import { genderDiagramData, noOfWinnersFromEachCountryDiagramData } from '../../data/laureatesData';
 import { noOfPrizesPerCategoryDiagramData, topTenLaureatesDiagram  } from '../../data/awardData';
 import { pieOptions, topTenOptions, countriesOptions } from '../diagrams/options';

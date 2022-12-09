@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Line, Bar } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 import data from '../../data/json_award.json';
 import './MoreDiagrams.css';
 import anime from 'animejs';
@@ -112,7 +112,6 @@ const MoreDiagrams = () => {
             easing: 'spring(1, 80, 10, 0)',
             left: '-100%'
         });
-        // setRoll(false);
     }
 
     function animationSlide() {
@@ -125,15 +124,7 @@ const MoreDiagrams = () => {
             opacity: 0,
             easing: 'easeOutQuad'
         });
-        // setRoll(false);
     }
-
-    // function animationRoll() {
-    //     setChartVisible(false);
-    //     setFade(false);
-    //     setSlide(false);
-    //     setRoll(true);
-    // }
 
     return (
         <section className="more-diagrams-wrapper">
@@ -147,10 +138,6 @@ const MoreDiagrams = () => {
                         <span>Slide in/out</span>
                         <input onClick={animationSlide} value="slide" type="radio" name='animation'/>
                     </div>
-                    {/* <div className="radio-container">
-                        <span>Roll in/out</span>
-                        <input onClick={animationRoll} value="roll" type="radio" name='animation'/>
-                    </div> */}
                 </form>
                 <article className='btns-wrapper'>
                     <button onClick={showChart} className='show-chart'>{chartVisible ? 'Hide Chart' : 'Show Chart'}</button>

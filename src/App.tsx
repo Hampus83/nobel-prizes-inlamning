@@ -1,6 +1,5 @@
 import './App.css'
 import DiagramCube from './components/diagrams/DiagramCube';
-import anime from 'animejs';
 import ButtonsContainer from './components/ButtonsContainer';
 import { useState } from 'react';
 import WelcomeOverlay from './components/WelcomeOverlay';
@@ -20,8 +19,6 @@ function App() {
   } else {
     maybeOverflow = 'App';
   }
-
-  // TODOS!!! FIXA LABELS PÅ TOP-10 + FIXA LOREM IPSUM
   
   return (
     <div className={maybeOverflow}>

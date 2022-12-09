@@ -57,7 +57,7 @@ for (let name in winnerNamesCount) {
 }
 
 winnerNamesCountArr.sort((a, b) => {
-    return b.wins - a.wins; // Om samma antal; sortera efter bokstavsordning!
+    return b.wins - a.wins;
 });
 
 const topTenArr: WinnerName[] = winnerNamesCountArr.slice(0, 10);

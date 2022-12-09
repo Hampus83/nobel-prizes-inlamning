@@ -1,6 +1,6 @@
 import './ButtonsContainer.css';
 import anime from 'animejs';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 interface Props{
     setSelectedDiagram: (selectedDiagram: string | null) => void;

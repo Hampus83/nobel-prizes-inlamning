@@ -1,7 +1,5 @@
 import data from './json_laureates.json';
 
-// console.log(data);
-
 // ********************* 4. Könsfördelning ********************************
 
 const genderData: string[] = data.map(object => object.gender ? object.gender : 'Organization' );

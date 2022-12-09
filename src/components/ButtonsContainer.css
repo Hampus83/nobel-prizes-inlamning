@@ -6,7 +6,6 @@
     left: 0%;
     top: 31%;
     width: 30%;
-    /* border: 1px red solid; */
 }
 
 .buttons-wrapper button {
@@ -15,7 +14,6 @@
     width: 12em;
     box-shadow: 6px 6px 2px black;
     transition: all 50ms ease-in-out;
-    /* border-radius: 5px; */
     background-color: #222222;
     color: #d7d7d7;
     border: 2px solid #d7d7d7;
